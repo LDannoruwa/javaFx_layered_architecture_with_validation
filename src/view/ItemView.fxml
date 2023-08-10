@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="635.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ItemController">
+   <children>
+      <Label layoutX="214.0" layoutY="30.0" prefHeight="49.0" prefWidth="232.0" text="Item View Form" textFill="#312399">
+         <font>
+            <Font size="33.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txt_itemID" layoutX="50.0" layoutY="105.0" onAction="#txtItemIDOnAction" prefHeight="42.0" prefWidth="149.0" promptText="Item ID" />
+      <TextField fx:id="txt_itemDescription" layoutX="50.0" layoutY="166.0" prefHeight="42.0" prefWidth="149.0" promptText="Description" />
+      <TextField fx:id="txt_unitPrice" layoutX="50.0" layoutY="227.0" prefHeight="42.0" prefWidth="149.0" promptText="Unit Price" />
+      <TextField fx:id="txt_QOH" layoutX="50.0" layoutY="284.0" prefHeight="42.0" prefWidth="149.0" promptText="QOH" />
+      <Button layoutX="158.0" layoutY="351.0" mnemonicParsing="false" onAction="#btnSaveOnAction" style="-fx-background-color: green;" text="Save" textFill="#f2f2f2" />
+      <TableView fx:id="table_itemData" layoutX="231.0" layoutY="105.0" prefHeight="221.0" prefWidth="375.0">
+         <columns>
+            <TableColumn id="item_id" fx:id="table_col_itemID" prefWidth="75.0" text="Item Id" />
+            <TableColumn id="item_description" fx:id="table_col_itemDescription" prefWidth="75.0" text="Description" />
+            <TableColumn id="item_unitPrice" fx:id="table_col_itemUnitPrice" prefWidth="75.0" text="Unit Price" />
+            <TableColumn id="item_QOH" fx:id="table_col_itemQOH" prefWidth="75.0" text="QOH" />
+            <TableColumn id="btnDelete" fx:id="table_col_itemDeleteButton" prefWidth="75.0" text="Delete" />
+         </columns>
+      </TableView>
+      <Button layoutX="50.0" layoutY="351.0" mnemonicParsing="false" onAction="#btnUpdateOnAction" style="-fx-background-color: blue;" text="Update" textFill="#f2f2f2" />
+   </children>
+</AnchorPane>

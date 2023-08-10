@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="603.0" prefWidth="638.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.OrderController">
+   <children>
+      <Label layoutX="199.0" layoutY="40.0" prefHeight="49.0" prefWidth="257.0" text="Order View Form" textFill="#312399">
+         <font>
+            <Font size="33.0" />
+         </font>
+      </Label>
+      <Button layoutX="367.0" layoutY="330.0" mnemonicParsing="false" onAction="#btnAddToChartOnAction" style="-fx-background-color: green;" text="Add to cart" textFill="#f2f2f2" />
+      <TableView fx:id="table_orderData" layoutX="63.0" layoutY="372.0" prefHeight="181.0" prefWidth="554.0">
+         <columns>
+            <TableColumn id="item_id" fx:id="table_col_itemID" prefWidth="75.0" text="Item Id" />
+            <TableColumn id="item_description" fx:id="table_col_itemDescription" prefWidth="75.0" text="Description" />
+            <TableColumn id="item_unitPrice" fx:id="table_col_itemUnitPrice" prefWidth="75.0" text="Unit Price" />
+            <TableColumn id="item_QOH" fx:id="table_col_itemQOH" prefWidth="75.0" text="QOH" />
+            <TableColumn id="item_Qty" fx:id="table_col_itemQty" prefWidth="75.0" text="Qty" />
+            <TableColumn id="item_total" fx:id="table_col_itemTotal" prefWidth="75.0" text="Total" />
+            <TableColumn id="btnRemove" fx:id="table_col_itemRemoveButton" prefWidth="75.0" text="Remove" />
+         </columns>
+      </TableView>
+      <Button layoutX="541.0" layoutY="565.0" mnemonicParsing="false" onAction="#btnPlaceOrderOnAction" style="-fx-background-color: blue;" text="Place order" textFill="#f2f2f2" />
+      <AnchorPane layoutX="61.0" layoutY="89.0" prefHeight="219.0" prefWidth="249.0" style="-fx-background-color: #F0F8FF;">
+         <children>
+            <ComboBox fx:id="comBox_cusID" layoutX="27.0" layoutY="90.0" onAction="#comBoxCustomerIDOnAction" prefWidth="150.0" promptText="Customer ID" />
+            <Label layoutX="27.0" layoutY="144.0" text="Customer Name :" />
+            <Label layoutX="27.0" layoutY="178.0" text="Customer Address :" />
+            <Label fx:id="lbl_customerName" layoutX="143.0" layoutY="144.0" />
+            <Label fx:id="lbl_customerAddress" layoutX="143.0" layoutY="179.0" />
+            <Label layoutX="31.0" layoutY="51.0" text="Date :" />
+            <Label fx:id="lbl_date" layoutX="147.0" layoutY="51.0" />
+            <TextField fx:id="txt_OrderID" layoutX="29.0" layoutY="14.0" promptText="Order ID" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="367.0" layoutY="89.0" prefHeight="219.0" prefWidth="220.0" style="-fx-background-color: #F0F8FF;">
+         <children>
+            <ComboBox fx:id="comBox_itemID" layoutX="26.0" layoutY="19.0" onAction="#comBoxItemIDOnAction" prefWidth="150.0" promptText="Item ID" />
+            <Label layoutX="26.0" layoutY="78.0" text="Description :" />
+            <Label layoutX="26.0" layoutY="112.0" text="Unit Price (Rs.)" />
+            <Label fx:id="lbl_itemDescription" layoutX="142.0" layoutY="78.0" />
+            <Label fx:id="lbl_itemUnitPrice" layoutX="142.0" layoutY="113.0" />
+            <Label layoutX="28.0" layoutY="143.0" text="QOH :" />
+            <Label fx:id="lbl_itemQOH" layoutX="144.0" layoutY="144.0" />
+         </children>
+      </AnchorPane>
+      <Label layoutX="61.0" layoutY="334.0" text="Quantity to buy : " />
+      <TextField fx:id="txt_byQTY" layoutX="161.0" layoutY="330.0" promptText="Quantity" />
+      <Label layoutX="208.0" layoutY="569.0" text="Sub Total :" />
+      <Label fx:id="lbl_subTotal" layoutX="278.0" layoutY="569.0" />
+   </children>
+</AnchorPane>
